@@ -3,683 +3,294 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="HAAZ Cabelos • Megahair tão natural que ninguém percebe. Luxo silencioso em fios premium.">
-    <title>HAAZ Cabelos • Naturalidade é luxo</title>
+    <meta name="description" content="HAAZ Cabelos • Elegância que não precisa ser explicada.">
+    <title>HAAZ Cabelos • Origem Brasileira</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&amp;family=Inter:wght@400;500&amp;display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&amp;family=Inter:wght@400;500;600&amp;display=swap');
         
         :root {
             --gold: #d4af77;
-            --pink: #f8c1cc;
-            --white: #faf9f6;
         }
         
-        * {
-            transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, transform, opacity;
-            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-            transition-duration: 200ms;
-        }
+        * { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
         
-        .tailwind-ready {
-            font-family: 'Inter', system_ui, sans-serif;
-        }
-        
-        .heading-font {
-            font-family: 'Playfair Display', sans-serif;
-        }
+        .tailwind-ready { font-family: 'Inter', system_ui, sans-serif; }
+        .heading-font { font-family: 'Playfair Display', sans-serif; }
 
-        /* HERO PARALLAX */
         .hero-bg {
-            background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.45)), 
-                        url('https://picsum.photos/id/1011/2000/1200') center/cover no-repeat fixed;
-            background-attachment: fixed; /* base para parallax */
-        }
-        
-        .parallax-layer {
-            transition: transform 0.1s ease-out;
+            background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), 
+                        url('background.png') center/cover no-repeat fixed;
         }
 
-        .section-header {
-            position: relative;
+        .minimal-card {
+            transition: all 0.4s ease;
         }
-        
-        .section-header::after {
-            content: '';
-            position: absolute;
-            width: 60px;
-            height: 3px;
-            background: #d4af77;
-            bottom: -8px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        
-        .nav-link {
-            position: relative;
-        }
-        
-        .nav-link:after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -2px;
-            left: 0;
-            background-color: #d4af77;
-        }
-        
-        .nav-link:hover:after {
-            width: 100%;
-        }
-        
-        .floating-wa {
-            animation: float 3s ease-in-out infinite;
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-12px); }
-        }
-        
-        .card-hover {
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .card-hover:hover {
-            transform: translateY(-8px) scale(1.03);
-            box-shadow: 25px 25px 40px -10px rgb(212 175 119 / 0.2);
-        }
-
-        /* Animações sofisticadas */
-        .animate-on-scroll {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: all 900ms cubic-bezier(0.25, 0.1, 0.25, 1);
-        }
-        
-        .animate-on-scroll.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .stagger-1 { transition-delay: 100ms; }
-        .stagger-2 { transition-delay: 200ms; }
-        .stagger-3 { transition-delay: 300ms; }
-        
-        /* Depoimentos */
-        .testimonial-card {
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .testimonial-card:hover {
-            transform: scale(1.05);
+        .minimal-card:hover {
+            transform: translateY(-8px);
         }
     </style>
 </head>
-<body class="tailwind-ready overflow-x-hidden">
+<body class="tailwind-ready bg-white text-gray-900 overflow-x-hidden">
+
     <!-- NAVBAR -->
-    <nav class="bg-white border-b border-gray-100 sticky top-0 z-50 shadow-sm">
-        <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
-            <!-- Logo REAL da empresa -->
-            <div class="flex items-center">
-                <img src="logo.jpeg" 
-                     alt="HAAZ Cabelos" 
-                     class="h-12 w-auto drop-shadow-sm">
+    <nav class="bg-white border-b sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center">
+            <img src="logo.jpeg" alt="HAAZ Cabelos" class="h-11 w-auto">
+            
+            <div class="hidden md:flex items-center gap-10 text-sm font-medium">
+                <a href="#inicio" class="hover:text-[#d4af77]">Início</a>
+                <a href="#sobre" class="hover:text-[#d4af77]">Sobre</a>
+                <a href="#colecao" class="hover:text-[#d4af77]">Coleção</a>
+                <a href="#tamanho" class="hover:text-[#d4af77]">Tamanho Ideal</a>
+                <a href="#diferenciais" class="hover:text-[#d4af77]">Por que HAAZ</a>
+                <a href="#depoimentos" class="hover:text-[#d4af77]">Resultados</a>
             </div>
 
-            <!-- Desktop Menu -->
-            <div class="hidden md:flex items-center gap-10 text-sm font-medium text-gray-700">
-                <a href="#inicio" class="nav-link">Início</a>
-                <a href="#historia" class="nav-link">Nossa História</a>
-                <a href="#materiais" class="nav-link">Nossos Cabelos</a>
-                <a href="#crenças" class="nav-link">Crenças</a>
-                <a href="#depoimentos" class="nav-link">Depoimentos</a>
-                <a href="#frases" class="nav-link">Frases HAAZ</a>
-            </div>
-
-            <div class="flex items-center gap-4">
-                <!-- WhatsApp Button (desktop) -->
-                <a href="https://wa.me/5511987654321" target="_blank"
-                   class="hidden md:flex items-center gap-2 bg-[#25D366] text-white text-sm font-medium px-6 py-3 rounded-3xl hover:bg-[#20c65b] shadow-md">
-                    <i class="fa-brands fa-whatsapp text-xl"></i>
-                    <span>Fale no WhatsApp</span>
-                </a>
-
-                <!-- Mobile Hamburger -->
-                <button id="mobile-menu-btn"
-                        class="md:hidden text-3xl text-gray-700 hover:text-[#d4af77]">
-                    <i class="fa-solid fa-bars"></i>
-                </button>
-            </div>
-        </div>
-
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t px-6 py-6">
-            <div class="flex flex-col gap-6 text-lg font-medium text-gray-700">
-                <a href="#inicio" class="mobile-link">Início</a>
-                <a href="#historia" class="mobile-link">Nossa História</a>
-                <a href="#materiais" class="mobile-link">Nossos Cabelos</a>
-                <a href="#crenças" class="mobile-link">Crenças</a>
-                <a href="#depoimentos" class="mobile-link">Depoimentos</a>
-                <a href="#frases" class="mobile-link">Frases HAAZ</a>
-                
-                <a href="https://wa.me/5511987654321" target="_blank"
-                   class="mt-4 flex items-center justify-center gap-3 bg-[#25D366] text-white py-4 rounded-3xl text-lg font-medium">
-                    <i class="fa-brands fa-whatsapp text-2xl"></i>
-                    <span>Conversar no WhatsApp agora</span>
-                </a>
-            </div>
+            <a href="https://wa.me/5511987654321" target="_blank"
+               class="bg-black text-white px-6 py-3.5 rounded-full text-sm font-medium flex items-center gap-2 hover:bg-[#d4af77] hover:text-black">
+                <i class="fa-brands fa-whatsapp"></i>
+                Falar com especialista
+            </a>
         </div>
     </nav>
 
-    <!-- HERO com Parallax sofisticado -->
-    <section id="inicio" class="hero-bg h-screen flex items-center relative overflow-hidden">
-        <div class="max-w-7xl mx-auto px-6 text-white relative z-10">
-            <div class="max-w-2xl">
-                <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md text-white text-sm font-medium px-5 py-2 rounded-3xl mb-6 border border-white/30">
-                    <span class="relative flex h-3 w-3">
-                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#d4af77] opacity-75"></span>
-                        <span class="relative inline-flex rounded-full h-3 w-3 bg-[#d4af77]"></span>
+    <!-- HERO -->
+    <section id="inicio" class="hero-bg h-screen flex items-center text-white">
+        <div class="max-w-5xl mx-auto px-6 text-center">
+            <h1 class="heading-font text-6xl md:text-7xl font-semibold tracking-tighter leading-none mb-6">
+                Elegância que não<br>precisa ser explicada
+            </h1>
+            <p class="text-2xl md:text-3xl font-light max-w-2xl mx-auto mb-10">
+                Cabelos brasileiros selecionados, com caimento natural e acabamento imperceptível
+            </p>
+            <a href="https://wa.me/5511987654321" target="_blank"
+               class="inline-block bg-white text-black px-10 py-5 rounded-full text-lg font-medium hover:bg-[#d4af77] hover:text-white">
+                Falar com especialista
+            </a>
+        </div>
+    </section>
+
+<!-- SOBRE A HAAZ -->
+<section id="sobre" class="py-28 bg-white">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+        <h2 class="heading-font text-5xl font-semibold mb-8">A HAAZ</h2>
+        
+        <p class="text-3xl md:text-4xl leading-tight font-light text-gray-800 max-w-3xl mx-auto mb-10">
+            Ninguém precisa saber que é megahair — só que você está ainda mais bonita.
+        </p>
+        
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+            Fios selecionados no sul do Brasil, com textura leve, brilho natural e o toque gelado que define cabelos de alto padrão.
+        </p>
+
+        <div class="prose prose-lg mx-auto text-gray-600 leading-relaxed mt-12">
+            <p>A HAAZ nasce da experiência no mercado atacadista, onde qualidade não é discurso — é critério.</p>
+            <p>Cada fio é selecionado para entregar leveza, naturalidade e um acabamento que não se revela.</p>
+        </div>
+    </div>
+</section>
+
+<!-- COLEÇÃO ORIGEM BRASILEIRA -->
+<section id="colecao" class="py-28 bg-[#faf9f6]">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2 class="heading-font text-5xl font-semibold">Coleção Origem Brasileira</h2>
+            <p class="text-gray-500 mt-3">Fios selecionados no sul do Brasil</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-10">
+            
+            <!-- Card 1 - Loiros -->
+            <div class="minimal-card bg-white rounded-3xl overflow-hidden shadow-sm">
+                <div class="aspect-[4/3] bg-[url('loiros.png')] bg-cover bg-top"></div>
+                <div class="p-8">
+                    <span class="text-[#d4af77] text-sm font-medium flex items-center gap-1">
+                        ✨ SIGNATURE
                     </span>
-                    AGORA NO VAREJO E ATACADO
-                </div>
-                
-                <h1 class="heading-font text-6xl md:text-7xl leading-none font-semibold tracking-tighter mb-4">
-                    Se parece natural,<br>é <span class="text-[#d4af77]">HAAZ</span>.
-                </h1>
-                
-                <p class="text-2xl md:text-3xl font-light mb-8 text-white/90">
-                    Cabelos tão reais que ninguém percebe.<br>
-                    Apenas que você está mais bonita, mais confiante, mais você.
-                </p>
-                
-                <div class="flex flex-wrap gap-4">
-                    <a href="#historia"
-                       class="px-8 py-5 bg-white text-gray-900 font-medium rounded-3xl flex items-center gap-3 hover:bg-[#d4af77] hover:text-white text-lg shadow-xl">
-                        Conheça nossa história
-                        <i class="fa-solid fa-arrow-down"></i>
-                    </a>
-                    
+                    <h3 class="text-3xl font-semibold mt-2">Loiros do Sul</h3>
+                    <p class="mt-4 text-gray-600">Fios claros selecionados do sul do Brasil, com leveza, brilho natural e tonalidade sofisticada.</p>
                     <a href="https://wa.me/5511987654321" target="_blank"
-                       class="px-8 py-5 border-2 border-white text-white font-medium rounded-3xl flex items-center gap-3 hover:bg-white hover:text-gray-900 text-lg">
-                        <i class="fa-brands fa-whatsapp"></i>
-                        Pedir agora
+                       class="mt-8 block w-full text-center py-4 border border-black rounded-full hover:bg-black hover:text-white font-medium">
+                        Consultar via WhatsApp
                     </a>
                 </div>
-                
-                <div class="mt-12 flex items-center gap-8 text-sm">
-                    <div class="flex -space-x-4">
-                        <img src="https://picsum.photos/id/64/48/48" alt="Cliente" class="w-8 h-8 rounded-2xl object-cover border-2 border-white ring-2 ring-white/50">
-                        <img src="https://picsum.photos/id/1009/48/48" alt="Cliente" class="w-8 h-8 rounded-2xl object-cover border-2 border-white ring-2 ring-white/50">
-                        <img src="https://picsum.photos/id/1011/48/48" alt="Cliente" class="w-8 h-8 rounded-2xl object-cover border-2 border-white ring-2 ring-white/50">
-                    </div>
-                    <p id="counter" class="text-white/80">+1.200 mulheres já transformaram seu visual com HAAZ</p>
+            </div>
+
+            <!-- Card 2 - Castanhos -->
+            <div class="minimal-card bg-white rounded-3xl overflow-hidden shadow-sm">
+                <div class="aspect-[4/3] bg-[url('castanhos.png')] bg-cover bg-top"></div>
+                <div class="p-8">
+                    <span class="text-[#d4af77] text-sm font-medium flex items-center gap-1">
+                        🤎 NATURAL ELEGANCE
+                    </span>
+                    <h3 class="text-3xl font-semibold mt-2">Castanhos do Sul</h3>
+                    <p class="mt-4 text-gray-600">Tons profundos e naturais, com caimento leve e acabamento discreto para um visual refinado.</p>
+                    <a href="https://wa.me/5511987654321" target="_blank"
+                       class="mt-8 block w-full text-center py-4 border border-black rounded-full hover:bg-black hover:text-white font-medium">
+                        Consultar via WhatsApp
+                    </a>
                 </div>
             </div>
-        </div>
 
-        <!-- Scroll indicator com animação -->
-        <div class="absolute bottom-10 left-1/2 flex flex-col items-center text-white/70 text-xs tracking-widest">
-            <div class="mb-2">ROLE PARA CONHECER</div>
-            <i class="fa-solid fa-chevron-down animate-bounce text-3xl"></i>
-        </div>
-
-        <!-- Trust badges -->
-        <div class="absolute bottom-10 right-10 hidden lg:flex items-center gap-8 bg-white/10 backdrop-blur-lg px-6 py-3 rounded-3xl text-white text-sm">
-            <div class="flex items-center gap-2">
-                <i class="fa-solid fa-leaf text-[#d4af77]"></i>
-                <span>100% Cabelo Humano</span>
+            <!-- Card 3 - Regionais -->
+            <div class="minimal-card bg-white rounded-3xl overflow-hidden shadow-sm">
+                <div class="aspect-[4/3] bg-[url('regionais.png')] bg-cover bg-top"></div>
+                <div class="p-8">
+                    <span class="text-[#d4af77] text-sm font-medium flex items-center gap-1">
+                        🇧🇷 ESSÊNCIA
+                    </span>
+                    <h3 class="text-3xl font-semibold mt-2">Regionais</h3>
+                    <p class="mt-4 text-gray-600">Cabelos com diversidade de texturas e características naturais.</p>
+                    <a href="https://wa.me/5511987654321" target="_blank"
+                       class="mt-8 block w-full text-center py-4 border border-black rounded-full hover:bg-black hover:text-white font-medium">
+                        Consultar via WhatsApp
+                    </a>
+                </div>
             </div>
-            <div class="h-3 w-px bg-white/30"></div>
-            <div>Entrega em todo Brasil</div>
-            <div class="h-3 w-px bg-white/30"></div>
-            <div>Atacado • Varejo</div>
-        </div>
-    </section>
 
-    <!-- HISTÓRIA -->
-    <section id="historia" class="py-24 bg-[#faf9f6]">
+            <!-- Card 4 - Descoloridos -->
+            <div class="minimal-card bg-white rounded-3xl overflow-hidden shadow-sm">
+                <div class="aspect-[4/3] bg-[url('descoloridos.png')] bg-cover bg-top"></div>
+                <div class="p-8">
+                    <span class="text-[#d4af77] text-sm font-medium flex items-center gap-1">
+                        ❄️ PLATINUM TOUCH
+                    </span>
+                    <h3 class="text-3xl font-semibold mt-2">Descoloridos</h3>
+                    <p class="mt-4 text-gray-600">Fios tratados com alto padrão, mantendo maciez e movimento mesmo após descoloração.</p>
+                    <a href="https://wa.me/5511987654321" target="_blank"
+                       class="mt-8 block w-full text-center py-4 border border-black rounded-full hover:bg-black hover:text-white font-medium">
+                        Consultar via WhatsApp
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- GUIA DE COMPRIMENTO -->
+<section id="tamanho" class="py-28 bg-[#faf9f6]">
+    <div class="max-w-5xl mx-auto px-6">
+        <div class="text-center mb-12">
+            <h2 class="heading-font text-5xl font-semibold mb-3">Qual o tamanho ideal?</h2>
+            <p class="text-gray-600 text-lg">Escolha o comprimento perfeito para o seu resultado desejado</p>
+        </div>
+        
+        <div class="flex justify-center">
+            <img src="tamanho.jpeg" 
+                 alt="Guia de comprimento de cabelo HAAZ - 30cm a 70cm"
+                 class="rounded-3xl shadow-2xl max-w-[400px] w-full h-auto mx-auto">
+        </div>
+        
+        <p class="text-center text-gray-500 mt-8 text-sm">
+            Medidas aproximadas de cabelo solto • Resultado pode variar conforme textura e densidade
+        </p>
+    </div>
+</section>
+
+    <!-- DIFERENCIAIS -->
+    <section id="diferenciais" class="py-28 bg-white">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="grid md:grid-cols-2 gap-16 items-center">
-                <div class="relative animate-on-scroll">
-                    <img src="https://picsum.photos/id/1005/800/900" alt="Mulher com cabelo HAAZ" 
-                         class="rounded-3xl shadow-2xl w-full object-cover">
-                    <div class="absolute -bottom-6 -right-6 bg-white rounded-3xl shadow-xl p-6 max-w-[220px]">
-                        <p class="text-[#d4af77] text-sm font-medium flex items-center gap-2">
-                            <i class="fa-solid fa-quote-left"></i>
-                            “Elegância não se explica. Se percebe.”
-                        </p>
-                    </div>
-                </div>
-                
-                <div class="animate-on-scroll stagger-1">
-                    <span class="uppercase tracking-[2px] text-[#d4af77] text-sm font-medium">A HAAZ nasceu nos bastidores</span>
-                    <h2 class="heading-font text-5xl font-semibold text-gray-900 mt-3 mb-8 leading-tight">
-                        Não vendemos apenas cabelo.<br>Entregamos presença.
-                    </h2>
-                    
-                    <div class="prose text-gray-600 text-lg leading-relaxed">
-                        <p>A HAAZ nasceu nos bastidores. Durante anos, trabalhamos no atacado, conhecendo de perto o que realmente diferencia um cabelo comum de um cabelo impecável. Não era apenas sobre vender fios — era sobre entender textura, caimento, brilho… e principalmente, naturalidade.</p>
-                        <p>Com o tempo, percebemos algo essencial: mulheres não querem apenas alongar o cabelo. Elas querem se sentir mais seguras, mais elegantes, mais elas mesmas — só que na sua melhor versão.</p>
-                        <p>Foi aí que a HAAZ começou a ganhar forma. Começamos com pequenas quantidades, escolhendo cada fio com um padrão muito claro: leveza, maciez, movimento natural e aquele toque “gelado” que só cabelos de alta qualidade têm.</p>
-                        <p class="mt-8 font-medium text-gray-900">Hoje, a HAAZ chega para o varejo e o atacado com um propósito definido: entregar cabelos tão naturais que ninguém perceba que é megahair — apenas que você está mais bonita, mais confiante, mais presente.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- DEPOIMENTOS (nova seção) -->
-    <section id="depoimentos" class="py-24 bg-white relative">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16 animate-on-scroll">
-                <span class="px-4 py-2 bg-[#f8c1cc]/10 text-[#f8c1cc] text-sm font-medium rounded-3xl">DEPOIMENTOS REAIS</span>
-                <h2 class="heading-font text-5xl font-semibold text-gray-900 mt-4">O que nossas clientes dizem</h2>
-                <p class="text-gray-500 mt-3">Naturalidade que transforma a autoestima</p>
+            <div class="text-center mb-16">
+                <h2 class="heading-font text-5xl font-semibold">Padrão HAAZ</h2>
+                <p class="text-gray-500 mt-3">O que nos diferencia</p>
             </div>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Depoimento 1 -->
-                <div class="testimonial-card bg-[#faf9f6] p-8 rounded-3xl shadow-sm animate-on-scroll">
-                    <div class="flex gap-4 mb-6">
-                        <img src="https://picsum.photos/id/64/64/64" alt="" class="w-12 h-12 rounded-2xl object-cover ring-2 ring-[#d4af77]/30">
-                        <div>
-                            <p class="font-semibold">Juliana Mendes</p>
-                            <p class="text-sm text-gray-500">São Paulo • 3 meses atrás</p>
-                        </div>
-                        <div class="ml-auto text-[#d4af77] text-2xl">★★★★★</div>
-                    </div>
-                    <p class="text-lg italic text-gray-700">"Meu cabelo ficou tão natural que minha própria mãe perguntou o que eu tinha feito diferente. Ninguém percebe que é megahair. É simplesmente HAAZ."</p>
+                <div class="text-center">
+                    <div class="text-4xl mb-4">🌾</div>
+                    <h4 class="font-semibold text-xl">Cabelos do Sul</h4>
+                    <p class="text-gray-600 mt-2">Mais valorizados no mercado brasileiro</p>
                 </div>
-                
-                <!-- Depoimento 2 -->
-                <div class="testimonial-card bg-[#faf9f6] p-8 rounded-3xl shadow-sm animate-on-scroll stagger-1">
-                    <div class="flex gap-4 mb-6">
-                        <img src="https://picsum.photos/id/1009/64/64" alt="" class="w-12 h-12 rounded-2xl object-cover ring-2 ring-[#d4af77]/30">
-                        <div>
-                            <p class="font-semibold">Mariana Costa</p>
-                            <p class="text-sm text-gray-500">Rio de Janeiro • 2 semanas atrás</p>
-                        </div>
-                        <div class="ml-auto text-[#d4af77] text-2xl">★★★★☆</div>
-                    </div>
-                    <p class="text-lg italic text-gray-700">"O toque gelado, a leveza e o brilho… é exatamente o que eu buscava. Sinto-me mais elegante sem esforço. Recomendo de olhos fechados!"</p>
+                <div class="text-center">
+                    <div class="text-4xl mb-4">🔍</div>
+                    <h4 class="font-semibold text-xl">Seleção Rigorosa</h4>
+                    <p class="text-gray-600 mt-2">Cada fio é escolhido individualmente</p>
                 </div>
-                
-                <!-- Depoimento 3 -->
-                <div class="testimonial-card bg-[#faf9f6] p-8 rounded-3xl shadow-sm animate-on-scroll stagger-2">
-                    <div class="flex gap-4 mb-6">
-                        <img src="https://picsum.photos/id/1011/64/64" alt="" class="w-12 h-12 rounded-2xl object-cover ring-2 ring-[#d4af77]/30">
-                        <div>
-                            <p class="font-semibold">Camila Ferreira</p>
-                            <p class="text-sm text-gray-500">Belo Horizonte • 1 mês atrás</p>
-                        </div>
-                        <div class="ml-auto text-[#d4af77] text-2xl">★★★★★</div>
-                    </div>
-                    <p class="text-lg italic text-gray-700">"Investimento que vale cada centavo. Meu cabelo ganhou movimento, volume e uma naturalidade impressionante. Já indiquei para todas as minhas amigas."</p>
+                <div class="text-center">
+                    <div class="text-4xl mb-4">🌿</div>
+                    <h4 class="font-semibold text-xl">Naturalidade Real</h4>
+                    <p class="text-gray-600 mt-2">Sem aspecto artificial</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl mb-4">⏳</div>
+                    <h4 class="font-semibold text-xl">Alta Durabilidade</h4>
+                    <p class="text-gray-600 mt-2">Longa vida útil com manutenção correta</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl mb-4">🌬️</div>
+                    <h4 class="font-semibold text-xl">Movimento Leve</h4>
+                    <p class="text-gray-600 mt-2">Caimento sofisticado e natural</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl mb-4">❄️</div>
+                    <h4 class="font-semibold text-xl">Toque Gelado</h4>
+                    <p class="text-gray-600 mt-2">Maciez e brilho superiores</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FRASES -->
-    <section id="frases" class="py-20 bg-gradient-to-b from-white to-[#faf9f6]">
+    <!-- DEPOIMENTOS -->
+    <section id="depoimentos" class="py-28 bg-[#faf9f6]">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-12 animate-on-scroll">
-                <h2 class="heading-font text-4xl font-semibold text-gray-900">O que a HAAZ representa</h2>
-                <p class="text-gray-500 mt-3">Frases que definem nossa essência</p>
-            </div>
+            <h2 class="text-center heading-font text-5xl font-semibold mb-16">Resultados Reais</h2>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-3xl shadow-sm card-hover animate-on-scroll">
-                    <p class="text-2xl leading-tight text-gray-800">"Se parece natural, é HAAZ."</p>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-3xl">
+                    <p class="italic text-lg">"Extremamente natural. Ninguém percebe que é megahair. Meu cabelo nunca esteve tão bonito."</p>
+                    <p class="mt-6 font-medium">- Juliana Mendes, São Paulo</p>
                 </div>
-                <div class="bg-white p-8 rounded-3xl shadow-sm card-hover animate-on-scroll stagger-1">
-                    <p class="text-2xl leading-tight text-gray-800">"Elegância não se explica. Se percebe."</p>
+                <div class="bg-white p-8 rounded-3xl">
+                    <p class="italic text-lg">"O brilho e o movimento são incríveis. Sinto-me muito mais elegante e confiante."</p>
+                    <p class="mt-6 font-medium">- Mariana Costa, Rio de Janeiro</p>
                 </div>
-                <div class="bg-white p-8 rounded-3xl shadow-sm card-hover animate-on-scroll stagger-2">
-                    <p class="text-2xl leading-tight text-gray-800">"Cabelo bonito todo mundo tem. Naturalidade é outro nível."</p>
-                </div>
-                <div class="bg-white p-8 rounded-3xl shadow-sm card-hover animate-on-scroll">
-                    <p class="text-2xl leading-tight text-gray-800">"Sua melhor versão começa nos detalhes."</p>
-                </div>
-                <div class="bg-white p-8 rounded-3xl shadow-sm card-hover animate-on-scroll stagger-1">
-                    <p class="text-2xl leading-tight text-gray-800">"Não é megahair. É HAAZ."</p>
-                </div>
-                <div class="bg-white p-8 rounded-3xl shadow-sm card-hover animate-on-scroll stagger-2">
-                    <p class="text-2xl leading-tight text-gray-800">"Beleza natural nunca sai de moda."</p>
+                <div class="bg-white p-8 rounded-3xl">
+                    <p class="italic text-lg">"Investimento que realmente vale a pena. Qualidade impecável do início ao fim."</p>
+                    <p class="mt-6 font-medium">- Camila Ferreira, Belo Horizonte</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- NOSSOS MATERIAIS -->
-    <section id="materiais" class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-12 animate-on-scroll">
-                <span class="px-4 py-2 bg-[#f8c1cc]/10 text-[#f8c1cc] text-sm font-medium rounded-3xl">MATERIAIS PREMIUM</span>
-                <h2 class="heading-font text-5xl font-semibold text-gray-900 mt-4">Cabelos escolhidos a dedo</h2>
-                <p class="max-w-md mx-auto text-gray-500 mt-4">Leveza, maciez, movimento natural e toque gelado. Só o que há de melhor.</p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="card-hover bg-[#faf9f6] rounded-3xl overflow-hidden animate-on-scroll">
-                    <div class="h-64 bg-[url('https://picsum.photos/id/1011/600/600')] bg-cover"></div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-baseline">
-                            <h3 class="font-semibold text-2xl">Virgin Brasileiro</h3>
-                            <span class="text-[#d4af77] text-sm font-medium">PREMIUM</span>
-                        </div>
-                        <p class="text-gray-500 mt-2 text-sm">Cabelo virgem, nunca processado. Máxima naturalidade e durabilidade.</p>
-                        <ul class="mt-6 space-y-3 text-sm">
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-[#d4af77]"></i> Toque gelado único</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-[#d4af77]"></i> Brilho natural intenso</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="card-hover bg-[#faf9f6] rounded-3xl overflow-hidden animate-on-scroll stagger-1">
-                    <div class="h-64 bg-[url('https://picsum.photos/id/1009/600/600')] bg-cover"></div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-baseline">
-                            <h3 class="font-semibold text-2xl">Remy Sedoso</h3>
-                            <span class="text-[#d4af77] text-sm font-medium">LUXO</span>
-                        </div>
-                        <p class="text-gray-500 mt-2 text-sm">Cutículas alinhadas. Maciez extrema e caimento perfeito.</p>
-                        <ul class="mt-6 space-y-3 text-sm">
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-[#d4af77]"></i> Movimento natural</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-[#d4af77]"></i> Fios finos e leves</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="card-hover bg-[#faf9f6] rounded-3xl overflow-hidden animate-on-scroll stagger-2">
-                    <div class="h-64 bg-[url('https://picsum.photos/id/64/600/600')] bg-cover"></div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-baseline">
-                            <h3 class="font-semibold text-2xl">Tape-in Invisível</h3>
-                            <span class="text-[#d4af77] text-sm font-medium">TECNOLOGIA</span>
-                        </div>
-                        <p class="text-gray-500 mt-2 text-sm">Aplicação invisível, fixação perfeita e resultado 100% natural.</p>
-                        <ul class="mt-6 space-y-3 text-sm">
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-[#d4af77]"></i> Sem danos ao cabelo natural</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-[#d4af77]"></i> Durabilidade até 6 meses</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="card-hover bg-[#faf9f6] rounded-3xl overflow-hidden animate-on-scroll">
-                    <div class="h-64 bg-[url('https://picsum.photos/id/1005/600/600')] bg-cover"></div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-baseline">
-                            <h3 class="font-semibold text-2xl">Clip-in Premium</h3>
-                            <span class="text-[#d4af77] text-sm font-medium">VERSÁTIL</span>
-                        </div>
-                        <p class="text-gray-500 mt-2 text-sm">Prático, removível e com o mesmo padrão de qualidade HAAZ.</p>
-                        <ul class="mt-6 space-y-3 text-sm">
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-[#d4af77]"></i> Fácil aplicação em casa</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-[#d4af77]"></i> Volume e comprimento instantâneos</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CRENÇAS -->
-    <section id="crenças" class="py-24 bg-[#faf9f6]">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16 animate-on-scroll">
-                <h2 class="heading-font text-5xl font-semibold text-gray-900">As crenças que nos movem</h2>
-                <p class="text-gray-500 mt-4 max-w-lg mx-auto">Beleza de verdade não chama atenção — ela se impõe com naturalidade.</p>
-            </div>
-            
-            <div class="grid md:grid-cols-3 gap-x-8 gap-y-12">
-                <div class="flex gap-5 animate-on-scroll">
-                    <div class="text-4xl text-[#d4af77]">01</div>
-                    <div>
-                        <h4 class="font-semibold text-xl mb-2">O melhor megahair é aquele que ninguém percebe</h4>
-                        <p class="text-gray-600">Naturalidade é luxo. Autoestima não é gasto, é investimento.</p>
-                    </div>
-                </div>
-                <div class="flex gap-5 animate-on-scroll stagger-1">
-                    <div class="text-4xl text-[#d4af77]">02</div>
-                    <div>
-                        <h4 class="font-semibold text-xl mb-2">Cada detalhe importa</h4>
-                        <p class="text-gray-600">Do fio ao acabamento final. Quem entende de qualidade, sente no primeiro toque.</p>
-                    </div>
-                </div>
-                <div class="flex gap-5 animate-on-scroll stagger-2">
-                    <div class="text-4xl text-[#d4af77]">03</div>
-                    <div>
-                        <h4 class="font-semibold text-xl mb-2">Não vendemos cabelo, entregamos presença</h4>
-                        <p class="text-gray-600">A verdadeira transformação é silenciosa. A mulher segura não precisa provar nada — ela transmite.</p>
-                    </div>
-                </div>
-                <div class="flex gap-5 animate-on-scroll">
-                    <div class="text-4xl text-[#d4af77]">04</div>
-                    <div>
-                        <h4 class="font-semibold text-xl mb-2">Preço baixo não define valor — qualidade sim</h4>
-                        <p class="text-gray-600">O luxo moderno é parecer simples, mas ser impecável.</p>
-                    </div>
-                </div>
-                <div class="flex gap-5 animate-on-scroll stagger-1">
-                    <div class="text-4xl text-[#d4af77]">05</div>
-                    <div>
-                        <h4 class="font-semibold text-xl mb-2">Cabelo bonito não é suficiente, ele precisa parecer seu</h4>
-                        <p class="text-gray-600">A melhor versão de uma mulher é aquela que parece effortless.</p>
-                    </div>
-                </div>
-                <div class="flex gap-5 animate-on-scroll stagger-2">
-                    <div class="text-4xl text-[#d4af77]">06</div>
-                    <div>
-                        <h4 class="font-semibold text-xl mb-2">Beleza natural nunca sai de moda</h4>
-                        <p class="text-gray-600">Um bom cabelo muda não só a aparência, mas a postura.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- GALERIA DE MULHERES -->
-    <section class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="flex justify-between items-baseline mb-8 animate-on-scroll">
-                <h2 class="heading-font text-4xl font-semibold">Mulheres que escolheram HAAZ</h2>
-                <a href="https://wa.me/5511987654321" target="_blank" class="text-[#d4af77] flex items-center gap-2 text-sm font-medium">
-                    Ver mais no Instagram 
-                    <i class="fa-solid fa-arrow-right"></i>
-                </a>
-            </div>
-            
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-                <img src="https://picsum.photos/id/1011/600/800" alt="Mulher HAAZ" class="rounded-3xl aspect-[4/5] object-cover hover:scale-105 animate-on-scroll">
-                <img src="https://picsum.photos/id/1009/600/800" alt="Mulher HAAZ" class="rounded-3xl aspect-[4/5] object-cover hover:scale-105 animate-on-scroll stagger-1">
-                <img src="https://picsum.photos/id/64/600/800" alt="Mulher HAAZ" class="rounded-3xl aspect-[4/5] object-cover hover:scale-105 animate-on-scroll stagger-2">
-                <img src="https://picsum.photos/id/1005/600/800" alt="Mulher HAAZ" class="rounded-3xl aspect-[4/5] object-cover hover:scale-105 animate-on-scroll">
-                <img src="https://picsum.photos/id/29/600/800" alt="Mulher HAAZ" class="rounded-3xl aspect-[4/5] object-cover hover:scale-105 animate-on-scroll stagger-1">
-                <img src="https://picsum.photos/id/30/600/800" alt="Mulher HAAZ" class="rounded-3xl aspect-[4/5] object-cover hover:scale-105 animate-on-scroll stagger-2">
-            </div>
+    <!-- CTA FINAL -->
+    <section class="py-28 bg-black text-white text-center">
+        <div class="max-w-2xl mx-auto px-6">
+            <h2 class="heading-font text-5xl font-semibold mb-6">Descubra a versão mais sofisticada de você</h2>
+            <a href="https://wa.me/5511987654321" target="_blank"
+               class="inline-block bg-white text-black px-12 py-6 rounded-full text-xl font-medium hover:bg-[#d4af77]">
+                Falar no WhatsApp
+            </a>
         </div>
     </section>
 
     <!-- FOOTER -->
-    <footer class="bg-gray-900 text-white py-16">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid md:grid-cols-12 gap-10">
-                <div class="md:col-span-5">
-                    <div class="flex items-center mb-6">
-                        <img src="logo.jpeg" 
-                             alt="HAAZ Cabelos" 
-                             class="h-12 w-auto">
-                    </div>
-                    <p class="text-gray-400 max-w-xs">Cabelos que transformam sem precisar explicar. Naturalidade é nosso padrão.</p>
-                    
-                    <div class="mt-8 flex gap-6 text-2xl">
-                        <a href="#" class="hover:text-[#d4af77]"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#" class="hover:text-[#d4af77]"><i class="fa-brands fa-tiktok"></i></a>
-                        <a href="#" class="hover:text-[#d4af77]"><i class="fa-brands fa-facebook"></i></a>
-                    </div>
-                </div>
-                
-                <div class="md:col-span-2">
-                    <h4 class="uppercase text-xs tracking-widest mb-4 text-gray-400">Empresa</h4>
-                    <ul class="space-y-3 text-gray-300">
-                        <li><a href="#historia" class="hover:text-white">Nossa História</a></li>
-                        <li><a href="#crenças" class="hover:text-white">Crenças</a></li>
-                        <li><a href="#" class="hover:text-white">Atacado</a></li>
-                        <li><a href="#" class="hover:text-white">Varejo</a></li>
-                    </ul>
-                </div>
-                
-                <div class="md:col-span-2">
-                    <h4 class="uppercase text-xs tracking-widest mb-4 text-gray-400">Produtos</h4>
-                    <ul class="space-y-3 text-gray-300">
-                        <li><a href="#materiais" class="hover:text-white">Virgin Brasileiro</a></li>
-                        <li><a href="#materiais" class="hover:text-white">Remy Sedoso</a></li>
-                        <li><a href="#materiais" class="hover:text-white">Tape-in</a></li>
-                        <li><a href="#materiais" class="hover:text-white">Clip-in</a></li>
-                    </ul>
-                </div>
-                
-                <div class="md:col-span-3">
-                    <h4 class="uppercase text-xs tracking-widest mb-4 text-gray-400">Fale conosco</h4>
-                    <a href="https://wa.me/5511987654321" target="_blank"
-                       class="flex items-center gap-3 bg-[#25D366] hover:bg-[#20c65b] text-white px-6 py-4 rounded-3xl text-lg font-medium w-fit">
-                        <i class="fa-brands fa-whatsapp text-3xl"></i>
-                        <div>
-                            <div class="text-sm opacity-75">WhatsApp oficial</div>
-                            <div class="font-medium">(11) 98765-4321</div>
-                        </div>
-                    </a>
-                    <p class="text-xs text-gray-500 mt-6">Atendimento de segunda a sábado,<br>das 9h às 19h.</p>
-                </div>
-            </div>
-            
-            <div class="border-t border-white/10 mt-16 pt-8 text-xs text-gray-400 flex flex-wrap justify-between items-center">
-                <div>© 2026 HAAZ Cabelos. Todos os direitos reservados.</div>
-                <div class="flex gap-6">
-                    <a href="#" class="hover:text-white">Política de Privacidade</a>
-                    <a href="#" class="hover:text-white">Termos de Uso</a>
-                    <a href="#" class="hover:text-white">Entregas e Trocas</a>
-                </div>
-                <div class="text-[#d4af77]">Feito com presença para mulheres que entendem de elegância.</div>
-            </div>
+    <footer class="bg-white border-t py-12">
+        <div class="max-w-7xl mx-auto px-6 text-center text-sm text-gray-500">
+            <img src="logo.jpeg" alt="HAAZ" class="h-8 mx-auto mb-6 opacity-75">
+            <p>© 2026 HAAZ Cabelos • Todos os direitos reservados</p>
         </div>
     </footer>
 
     <!-- FLOATING WHATSAPP -->
     <a href="https://wa.me/5511987654321" target="_blank"
-       class="floating-wa fixed bottom-8 right-8 bg-[#25D366] text-white w-16 h-16 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 z-50 text-4xl">
+       class="fixed bottom-8 right-8 bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center text-4xl shadow-2xl hover:scale-110 z-50">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
     <script>
-        // Tailwind
-        function initializeTailwind() {
-            return {
-                config(userConfig = {}) {
-                    return {
-                        content: [],
-                        theme: { extend: {} },
-                        plugins: [],
-                        ...userConfig,
-                    }
-                },
-                theme: {
-                    extend: {
-                        colors: { gold: '#d4af77', pink: '#f8c1cc' }
-                    }
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth' });
                 }
-            }
-        }
-
-        // Animações sofisticadas + Parallax
-        document.addEventListener('DOMContentLoaded', () => {
-            initializeTailwind()
-
-            // Mobile menu
-            const mobileBtn = document.getElementById('mobile-menu-btn')
-            const mobileMenu = document.getElementById('mobile-menu')
-            
-            mobileBtn.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden')
-                mobileBtn.innerHTML = mobileMenu.classList.contains('hidden') 
-                    ? '<i class="fa-solid fa-bars"></i>' 
-                    : '<i class="fa-solid fa-xmark"></i>'
-            })
-
-            // Smooth scroll
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    const target = document.querySelector(this.getAttribute('href'))
-                    if (target) {
-                        e.preventDefault()
-                        target.scrollIntoView({ behavior: 'smooth' })
-                        
-                        if (!mobileMenu.classList.contains('hidden')) {
-                            mobileMenu.classList.add('hidden')
-                            mobileBtn.innerHTML = '<i class="fa-solid fa-bars"></i>'
-                        }
-                    }
-                })
-            })
-
-            // Parallax no hero (caso o div exista)
-            const hero = document.getElementById('inicio')
-            const parallaxHair = document.getElementById('parallax-hair')
-            
-            window.addEventListener('scroll', () => {
-                const scrollY = window.scrollY
-                if (parallaxHair) {
-                    parallaxHair.style.transform = `translateY(${scrollY * 0.25}px)`
-                }
-            })
-
-            // Intersection Observer para animações sofisticadas
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible')
-                    }
-                })
-            }, {
-                threshold: 0.15,
-                rootMargin: "0px 0px -50px 0px"
-            })
-
-            // Aplicar observer em todos os elementos com animate-on-scroll
-            document.querySelectorAll('.animate-on-scroll').forEach(el => {
-                observer.observe(el)
-            })
-
-            // Contador animado no hero
-            const counterEl = document.getElementById('counter')
-            let started = false
-            const animateCounter = () => {
-                if (started) return
-                started = true
-                let count = 800
-                const target = 1200
-                const increment = Math.ceil((target - count) / 60)
-                
-                const timer = setInterval(() => {
-                    count += increment
-                    if (count >= target) {
-                        count = target
-                        clearInterval(timer)
-                    }
-                    counterEl.textContent = `+${count} mulheres já transformaram seu visual com HAAZ`
-                }, 30)
-            }
-            
-            // Inicia o contador quando o hero entra na tela
-            const heroObserver = new IntersectionObserver((entries) => {
-                if (entries[0].isIntersecting) animateCounter()
-            }, { threshold: 0.5 })
-            heroObserver.observe(hero)
-        })
+            });
+        });
     </script>
 </body>
 </html>
